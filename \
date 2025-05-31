@@ -22,11 +22,10 @@ typedef struct {
 
 void is_age_valid(person * p)
 {
-	printf("Your age is: %d\n", p->age);
-        if (p->age > 18){
+        if (*(p).age > 18){
                 printf("You are valid for job\n");
         }
-        else if (p->age >= 60){
+        else if (*(p).age >= 60){
                 printf("Ypu have to retire\n");
 
         }
@@ -118,5 +117,5 @@ int main()
 
 	printf("My name is %s and my occupation is %s\n", new_person.last_name, new_person.occupation);
 
-	is_age_valid(&new_person);
+	is_age_valid(new_person);
 }
