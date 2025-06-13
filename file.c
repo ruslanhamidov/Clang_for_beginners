@@ -2,10 +2,26 @@
 #include <string.h>
 #include <stdlib.h>
 
+char tracks[][80] = {
+	"I left my heart in Harvard Med School",
+	"Newark, Newark - a wonderful town",
+	"Dancing with a Dork",
+	"From here to maternity",
+	"The girl from Iwo Jima",
+};
 
 int calculate_average(int sum, int div)
 {
 	return sum / div;
+}
+
+void find_track(char search_for[])
+{
+	for (int i = 0; i < 5; i++)
+	{
+		if (strstr(tracks[i], search_for))
+		printf("Track %i: '%s'\n", i, tracks[i]);
+	}
 }
 
 struct my_struct {
@@ -133,4 +149,10 @@ int main()
 	is_age_valid(dynamic_person);
 	printf("Hey I am dynamically allocated person: %s %s\n", dynamic_person->name, dynamic_person->last_name);
 	free(dynamic_person);
+
+	char search_for[80];
+	printf("Search for: ");
+	scanf("%s", search_for);
+	find_track(search_for);
+
 }
