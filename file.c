@@ -52,7 +52,6 @@ void is_age_valid(person * p)
         {
                 printf("Sorry you are not valid for job %s\n", p->name);
         }
-
 }
 
 
